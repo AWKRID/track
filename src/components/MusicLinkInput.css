@@ -1,0 +1,46 @@
+.music-link-input {
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+}
+
+.music-link-input input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: none;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.music-link-input button {
+  padding: 12px 15px;
+  background-color: #4dabf7;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.music-link-input button:hover {
+  background-color: #3b8fd9;
+}
+
+.music-link-input button.loading {
+  background-color: #a0c4e4;
+  cursor: wait;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 14px;
+  margin-top: 8px;
+  padding-left: 5px;
+}

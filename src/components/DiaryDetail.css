@@ -1,0 +1,448 @@
+.diary-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.detail-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  background-color: var(--card-background);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2001;
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diary-header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diary-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 700px) {
+  .close-button {
+    right: 16px;
+  }
+}
+
+.diary-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+
+.diary-content-card {
+  padding: 24px;
+}
+
+.diary-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--active-color);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.author-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.post-time {
+  font-size: 13px;
+  color: var(--light-text);
+  margin-top: 2px;
+}
+
+.diary-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.music-info {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.music-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.music-preview {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: var(--hover-color);
+  border-radius: 12px;
+}
+
+.music-icon {
+  margin-right: 14px;
+  font-size: 18px;
+}
+
+.music-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.music-link:hover {
+  text-decoration: underline;
+}
+
+.emotion-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background-color: var(--active-color);
+  color: var(--primary-color);
+  border-radius: 30px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.diary-text {
+  color: var(--text-color);
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 24px;
+  white-space: pre-line;
+}
+
+.reactions-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.reaction-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 10px 0;
+  border-radius: 30px;
+  color: var(--light-text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
+}
+
+.reaction-button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.reaction-button.selected {
+  border-color: var(--primary-color);
+  background-color: var(--active-color);
+  color: var(--primary-color);
+}
+
+.reaction-emoji {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+.reaction-count {
+  font-weight: 600;
+}
+
+/* 반응 애니메이션 */
+.reaction-clicked {
+  animation: pulse 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.comments-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  background-color: var(--card-background);
+}
+
+.toggle-comments-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toggle-comments-button:hover {
+  text-decoration: underline;
+}
+
+.comments-container {
+  margin-top: 16px;
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.comment-form {
+  display: flex;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  align-items: center;
+  height: 50px;
+  text-align: left;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background-color: var(--hover-color);
+  height: 42px;
+  text-align: left;
+}
+
+.comment-input:focus {
+  border-color: var(--primary-color);
+  background-color: white;
+}
+
+.comment-submit-button {
+  height: 42px;
+  padding: 0 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-submit-button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.comment-item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: var(--hover-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 60px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.comment-author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: left;
+}
+
+.comment-time {
+  font-size: 12px;
+  color: var(--light-text);
+  text-align: right;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: left;
+  min-height: 24px;
+  word-break: break-all;
+}
+
+.no-comments {
+  text-align: center;
+  color: var(--light-text);
+  font-size: 14px;
+  padding: 16px 0;
+}
+
+/* 모달 오버레이 스타일 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* 모달 컨테이너 스타일 */
+.diary-detail-modal {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  background-color: var(--card-background);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2001;
+  animation: slide-up 0.3s ease;
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 모달 헤더 스타일 */
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}

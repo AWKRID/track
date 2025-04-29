@@ -1,0 +1,302 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  padding: 20px;
+  min-height: 100vh;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+:root {
+  --primary-color: #5f3dc4;
+  --secondary-color: #845ef7;
+  --text-color: #333;
+  --light-text: #666;
+  --background-color: #f5f6f8;
+  --card-background: #fff;
+  --border-color: #e1e4e8;
+  --hover-color: #f0f2f5;
+  --active-color: #e5dbff;
+  --button-color: #5f3dc4;
+  --button-hover: #4c3199;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  height: 64px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-right: 24px;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  background: none;
+  border-radius: 18px;
+  color: var(--light-text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-color);
+}
+
+.nav-item.active {
+  font-weight: 600;
+  color: var(--text-color);
+  background-color: var(--hover-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.new-post-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border: none;
+  background-color: var(--button-color);
+  color: white;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 36px;
+}
+
+.new-post-button:hover {
+  background-color: var(--button-hover);
+}
+
+.new-post-button.active {
+  background-color: var(--button-hover);
+}
+
+.plus-icon {
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+.user-profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 12px;
+  border: none;
+  background-color: var(--hover-color);
+  color: var(--text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-profile-button:hover {
+  background-color: var(--active-color);
+}
+
+.user-icon {
+  font-size: 16px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 64px; /* 헤더 높이와 동일하게 설정 */
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 12px;
+    height: 56px;
+  }
+
+  .logo {
+    font-size: 18px;
+    margin-right: 16px;
+  }
+
+  .nav-item {
+    padding: 6px 12px;
+    font-size: 13px;
+    height: 32px;
+  }
+
+  .new-post-button {
+    padding: 0 14px;
+    font-size: 13px;
+    height: 32px;
+  }
+
+  .user-profile-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .main-content {
+    padding: 16px 12px;
+    margin-top: 56px;
+  }
+}
+
+/* 스크롤 바 숨김 */
+.main-content,
+.detail-container {
+  scrollbar-width: none; /* 파이어폭스 */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.main-content::-webkit-scrollbar,
+.detail-container::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라 */
+}
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  min-width: 140px;
+  z-index: 1000;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-item {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}

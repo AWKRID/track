@@ -1,0 +1,139 @@
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.auth-modal {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s;
+  overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.auth-modal-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-color, #333);
+  margin: 0;
+}
+
+.auth-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--light-text, #888);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 2;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color, #333);
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--input-background, #f5f5f5);
+  color: var(--text-color, #333);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color, #5f3dc4);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color, #5f3dc4);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover, #4c319c);
+}
+
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--light-text, #888);
+}
+
+.switch-mode-button {
+  background: none;
+  border: none;
+  color: var(--primary-color, #5f3dc4);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.switch-mode-button:hover {
+  text-decoration: underline;
+}
+
+form {
+  text-align: left;
+  width: 100%;
+}
